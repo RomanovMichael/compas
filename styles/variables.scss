@@ -1,18 +1,18 @@
 :root {
   // colors
   --light: #F8F7F7;
-  --dark: #121212;
+  --dark: #000000;
 
   --blue: #2790EB;
-  --green: #55B77E;
-  --red: #E15E5E;
-  --gradient: linear-gradient(135.00deg, rgb(39, 146, 237) -0.255%, rgb(85, 183, 126) 99.745%);
+  --blue-light: rgba(166, 183, 212, 0.47);
 
-  --gray: #959595;
-  --dark-gray: rgba(141, 141, 141, 0.1);
+  --gray-strong: #BCBCBC;
+  --gray-medium: #EEEFF1; 
+  --gray-light: #FBFCFD;
+  
+  --text-caption: #8F8F8F;
+  --text-blue: #1253A2;
 
-  --smoke: rgba(45, 45, 45, 0.3);
-  --caption: #96AAA7;
-
-  --bottom-border: rgba(150, 170, 167, 0.3);
+  --gradient: linear-gradient(90.00deg, rgb(0, 0, 0) 30%,rgb(28, 39, 52) 73%);
+  --smoke: 0px 0px 20px 0px rgba(0, 0, 0, 0.12); 
 }
