@@ -1,12 +1,15 @@
 <script setup>
 const route = useRoute()
 const getDocs = await queryContent('/docs').findOne()
+
 const currentPage = getDocs.data[route.params.page]
+const breadcrumbs = [currentPage.flag, currentPage.title ]
 </script>
 
 <template>
   <div class="page-docs">
     <ui-container>
+      <ui-breadcrumbs :items="breadcrumbs"/>
       <ui-title
         v-if="currentPage.title" 
         type="title-main"

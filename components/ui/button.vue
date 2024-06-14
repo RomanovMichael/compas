@@ -47,7 +47,7 @@ const clickHandler = () => {
       <play-icon/>
     </span>
     <span v-html="label" class="ui-button__text"></span>
-    <span v-if="playBtn" class="ui-button__duration"> (1 мин. 20 сек)</span>
+    <span v-if="playBtn" class="ui-button__duration"> (2 мин. 36 сек)</span>
     <span v-if="requestBtn" class="ui-button__arrow">
       <arrow-right-icon/>
     </span>
