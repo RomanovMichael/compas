@@ -6,7 +6,7 @@ const mainStore = useMainStore()
 
 <template>
   <div class="page page-main">
-    <section-hero/>
+    <!-- <section-hero/> -->
     <section-features/>
     <section-bibliography/>
   </div>

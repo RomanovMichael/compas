@@ -11,7 +11,8 @@ const icons = getImagesFromGlob(glob)
       <div
         v-for="feature in features"
         :key="feature.id"
-        class="section-features-list__item">
+        class="section-features-list__item"
+      >
         <div class="section-features-list-tem-icon">
           <component :is="icons[feature.icon]" />
         </div>
@@ -29,12 +30,23 @@ const icons = getImagesFromGlob(glob)
     </div>
 </template>
 
-
 <style lang="scss">
   .section-features-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 35px;
+
+    @include laptops {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include tablets {
+      grid-gap: 24px;
+    } 
+
+    @include phones {
+      grid-template-columns: 1fr;
+    }
 
     &__item {
       display: flex;
@@ -46,12 +58,40 @@ const icons = getImagesFromGlob(glob)
       border: 1px solid var(--gray-medium);
       padding: 24px 20px;
 
+      @include laptops {
+        justify-content: flex-start;
+        gap: 35px;
+      }
+
+      @include tablets {
+        gap: 24px;
+      } 
+
+      @include small-screen {
+        flex-direction: column;
+      }
+
       &-content {
         max-width: 247px;
+
+        @include laptops {
+          max-width: 100%;
+        }
+      }
+
+      &-title {
+        
+        @include small-screen {
+          text-align: center;
+        }
       }
 
       &-desc {
         margin-top: 10px;
+
+        @include small-screen {
+          text-align: center;
+        }
       }
     }
   }
