@@ -15,5 +15,11 @@ const bibliographyList = getDocs.data
 <style lang="scss">
 .section-bibliography {
   margin-top: 85px;
+
+  .ui-container {
+    @include tablets {
+      padding: 0;
+    }
+  }
 }
 </style>

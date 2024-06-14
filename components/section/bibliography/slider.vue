@@ -19,11 +19,20 @@ const props = defineProps({
       :modules="sliderModules"
       :autoHeight="true"
       navigation
-      :slidesPerView="3"
-      :spaceBetween="35"
+      :slidesPerView="1"
+      :spaceBetween="16"
       :grabCursor="true"
       :pagination="{
         clickable: true,
+      }"
+      :breakpoints="{
+        991: {
+          slidesPerView: 3,
+          spaceBetween: 35
+        },
+        768: {
+          slidesPerView: 2,
+        }
       }"
     >
     <swiper-slide
@@ -53,6 +62,10 @@ const props = defineProps({
       background-color: var(--blue-light);
       cursor: pointer;
       z-index: 2;
+
+      @include tablets {
+        display: none;
+      }
     }
 
     .swiper-button-prev {
@@ -82,6 +95,7 @@ const props = defineProps({
       align-items: center;
       gap: 5px;
       flex-wrap: nowrap;
+      height: 10px;
     }
 
     .swiper-pagination-bullet {

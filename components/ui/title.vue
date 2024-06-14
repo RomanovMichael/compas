@@ -48,6 +48,10 @@ const props = defineProps({
   &.subtitle-main h3 {
     color: var(--text-blue);
     font-size: 31px;
+
+    @include phones {
+      font-size: 27px;
+    }
   }
 
   &.subtitle-section h4 {
