@@ -15,6 +15,12 @@
   position: relative;
   width: 119px;
   height: 23px;
+  transition: opacity .25s ease;
+
+  &:hover {
+    opacity: .9;
+    transition: opacity .25s ease;
+  }
 
   & svg {
     position: absolute;

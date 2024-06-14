@@ -5,9 +5,10 @@ const mainStore = useMainStore()
 </script>
 
 <template>
+  <layout-header/>
   <main>
     <nuxt-page />
-    <ui-popup v-show="mainStore.popup"/> 
+    <ui-popup v-if="mainStore.popup"/> 
   </main>
 </template>
 

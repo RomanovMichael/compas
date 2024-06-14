@@ -79,6 +79,7 @@ const clickHandler = () => {
     }
 
     &.ui-button--play {
+      opacity: 1;
       transition: all .25s ease;
       box-shadow: var(--smoke);
       background-color: var(--dark);
