@@ -19,7 +19,5 @@ export default defineNuxtConfig({
       svgLoader(),
     ],
   },
-  modules: [
-    '@pinia/nuxt',
-  ],
+  modules: ['@pinia/nuxt', '@nuxt/content'],
 })

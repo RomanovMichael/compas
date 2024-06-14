@@ -1,5 +1,6 @@
 <script setup>
-import { bibliographyList } from './config' 
+const getDocs = await queryContent('/docs').findOne()
+const bibliographyList = getDocs.data
 </script>
 
 <template>
