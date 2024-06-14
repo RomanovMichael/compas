@@ -11,10 +11,14 @@ const props = defineProps({
     type: String,
     default: 'primary',
   },
-  type: {
-    type: String,
+  playBtn: {
+    type: Boolean,
     required: false, 
   },
+  requestBtn: {
+    type: Boolean,
+    required: false
+  }
 })
 
 const emit = defineEmits(['click'])
@@ -30,15 +34,16 @@ const clickHandler = () => {
     :class="[
       'ui-button',
       `ui-button--${color}`,
-      `ui-button--${type}`,
+      {'ui-button--request': requestBtn},
+      {'ui-button--play': playBtn}
     ]"
   >
-    <span v-if="type === 'play'" class="ui-button__playicon">
+    <span v-if="playBtn" class="ui-button__playicon">
       <play-icon/>
     </span>
     <span v-html="label" class="ui-button__text"></span>
-    <span v-if="type === 'play'" class="ui-button__duration"> (1 мин. 20 сек)</span>
-    <span v-if="type === 'request'" class="ui-button__arrow">
+    <span v-if="playBtn" class="ui-button__duration"> (1 мин. 20 сек)</span>
+    <span v-if="requestBtn" class="ui-button__arrow">
       <arrow-right-icon/>
     </span>
   </button>
