@@ -11,4 +11,5 @@ const mainStore = useMainStore()
   <ui-logo/>
 
   <section-features/>
+  <section-bibliography/>
 </template>
