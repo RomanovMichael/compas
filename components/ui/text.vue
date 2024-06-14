@@ -1,18 +1,30 @@
 <script setup>
 const props = defineProps({
-  type: {
+  textSize: {
     type: String,
-    default: 'body-regular',
+    default: 'size-md',
   }
 })
 </script>
 
 <template>
-  <div :class="`ui-text ${type}`">
+  <p :class="`ui-text ui-text--${textSize}`">
     <slot />
-  </div>
+  </p>
 </template>
 
 <style lang="scss">
-.ui-text {}
+.ui-text {
+  color: var(--dark);
+  
+  &--size-md {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  &--size-sm {
+    font-size: 15px;
+    line-height: 120%;
+  }
+}
 </style>

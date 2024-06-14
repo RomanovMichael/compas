@@ -9,4 +9,6 @@ const mainStore = useMainStore()
   <ui-button requestBtn label="Проверить штрафы"></ui-button>
   <ui-button @click="mainStore.togglePopup()" playBtn label="О сервисе"></ui-button>
   <ui-logo/>
+
+  <section-features/>
 </template>

@@ -9,6 +9,6 @@
 <style lang="scss">
 .ui-container {
   margin: 0 auto;
-  max-width: 1135px;
+  max-width: 1164px;
 }
 </style>

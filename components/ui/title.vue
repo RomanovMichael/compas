@@ -4,10 +4,6 @@ const props = defineProps({
     type: String,
     default: 'title-section'
   },
-  placement: {
-    type: String,
-    required: false
-  }
 })
 </script>
 
@@ -22,37 +18,41 @@ const props = defineProps({
     <h3 v-else-if="type === 'subtitle-main'" class="ui-title__text">
       <slot />
     </h3>
-    <h3 v-else-if="type === 'subtitle-section'" class="ui-title__text">
+    <h4 v-else-if="type === 'subtitle-section'" class="ui-title__text">
       <slot />
-    </h3>
+    </h4>
   </div>
 </template>
 
 <style lang="scss">
 .ui-title {
-  h1, h2, h3 {
-    margin: 0;
+
+  h1, h2, h3, h4{
+    margin: 0 ;
     padding: 0;
     font-style: normal;
+    line-height: 120%;
+    font-weight: 700;
+    color: var(--dark);
   }
 
   &.title-main h1 {
-    text-align: center;
-    letter-spacing: 4px;
-    font-size: 70px;
-    line-height: 80px;
+    font-size: 41px;
   }
 
   &.title-section h2 {
-
+    text-align: center;
+    font-size: 34px;
   }
 
   &.subtitle-main h3 {
-
+    color: var(--text-blue);
+    font-size: 31px;
   }
 
-  &.subtitle-section h3 {
-
+  &.subtitle-section h4 {
+    color: var(--text-blue);
+    font-size: 18px;
   }
 }
 </style>
