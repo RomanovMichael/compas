@@ -1,6 +1,5 @@
 export const useMainStore = defineStore('main', () => {
   const popup = ref(false)
-  const inputVal = ref('')
   const form = ref({
     data: {
       id:'',
@@ -14,5 +13,5 @@ export const useMainStore = defineStore('main', () => {
     popup.value = !popup.value
   }
 
-  return { popup, togglePopup, inputVal }
+  return { popup, togglePopup, form }
 })

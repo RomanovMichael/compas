@@ -18,6 +18,10 @@ const props = defineProps({
   requestBtn: {
     type: Boolean,
     required: false
+  },
+  action: {
+    type: String,
+    default: 'button'
   }
 })
 
@@ -30,6 +34,7 @@ const clickHandler = () => {
 
 <template>
   <button
+    :type="action"
     @click="clickHandler"
     :class="[
       'ui-button',
