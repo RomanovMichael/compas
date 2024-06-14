@@ -2,7 +2,7 @@
 
 <template>
   <ui-container>
-    <h1>Контакты</h1>
+    <ui-title>Контакты</ui-title>
   </ui-container>
 </template>
 

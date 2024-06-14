@@ -38,6 +38,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      @include phones {
+        padding-right: 0;
+      }
     }
 
     &__side {

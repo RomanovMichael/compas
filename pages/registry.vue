@@ -2,7 +2,7 @@
 
 <template>
   <ui-container>
-    <h1>Регистрация</h1>
+    <ui-title>Регистрация</ui-title>
   </ui-container>
 </template>
 

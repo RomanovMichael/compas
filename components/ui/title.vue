@@ -47,6 +47,10 @@ const props = defineProps({
   &.title-section h2 {
     text-align: center;
     font-size: 34px;
+
+    @include phones {
+      font-size: 28px;
+    }
   }
 
   &.subtitle-main h3 {

@@ -27,14 +27,17 @@
 .ui-breadcrumbs {
   display: flex;
   align-items: center;
-  gap: 26px;
+  flex-wrap: wrap;
 
   a,span {
     font-size: 13px;
+    white-space: nowrap;
   }
 
   &__item {
     position: relative;
+    margin-right: 26px;
+    margin-bottom: 10px;
 
     &:after {
       content: '';

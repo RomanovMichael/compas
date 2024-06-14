@@ -2,7 +2,7 @@
 
 <template>
   <ui-container>
-    <h1>Тарифы</h1>
+    <ui-title>Тарифы</ui-title>
   </ui-container>
 </template>
 

@@ -2,7 +2,7 @@
 
 <template>
   <ui-container>
-    <h1>Вход</h1>
+    <ui-title>Вход</ui-title>
   </ui-container>
 </template>
 
