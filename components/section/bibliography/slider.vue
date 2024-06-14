@@ -7,7 +7,7 @@ const sliderModules = ref([Navigation, Pagination, Scrollbar])
 
 const props = defineProps({
   slides: {
-    type: Array,
+    type: Object,
     required: true
   }
 })

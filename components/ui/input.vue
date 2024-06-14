@@ -41,7 +41,6 @@ const updateValue = (e) => {
       :name="name"
       :id="name"
       :value="value"
-      :placeholder="placeholder"
       @input="updateValue"
       class="ui-input__text">
   </div>

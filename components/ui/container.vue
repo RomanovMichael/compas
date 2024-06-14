@@ -10,5 +10,13 @@
 .ui-container {
   margin: 0 auto;
   max-width: 1164px;
+
+  @include laptops {
+    padding: 0 32px;
+  }
+
+  @include phones {
+    padding: 0 16px;
+  }
 }
 </style>

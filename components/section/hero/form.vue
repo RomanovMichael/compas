@@ -8,10 +8,10 @@ const mainStore = useMainStore()
   <div class="section-hero-form">
     <form>
       <div class="section-hero-form__group">
-        <ui-input v-model:value="mainStore.form.data.id"  label="Номер автомобиля"/>
-        <ui-input v-model:value="mainStore.form.data.region"  label="Регион"/>
+        <ui-input v-model:value="mainStore.form.data.id" label="Номер автомобиля" name="carId"/>
+        <ui-input v-model:value="mainStore.form.data.region" label="Регион" name="carRegion"/>
       </div>
-      <ui-input v-model:value="mainStore.form.data.certificate" label="Свидетельство о регистрации ТС"/>
+      <ui-input v-model:value="mainStore.form.data.certificate" label="Свидетельство о регистрации ТС" name="carReciept"/>
       <div class="section-hero-form__btns">
         <ui-button action="submit" requestBtn label="Проверить штрафы"></ui-button>
         <ui-button @click="mainStore.togglePopup()" playBtn label="О сервисе"></ui-button>
