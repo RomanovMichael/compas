@@ -11,8 +11,8 @@
       </div>
       <div class="layout-header__side layout-header__side--right">
         <a href="tel:74951184422" target="_blank" class="layout-header__phone">+7 495 118-44-22</a>
-        <ui-button color="transparent" label="Вход"></ui-button>
-        <ui-button label="Регистрация"></ui-button>
+        <ui-button @click="$router.push('/auth')" color="transparent" label="Вход"></ui-button>
+        <ui-button @click="$router.push('/registry')" label="Регистрация"></ui-button>
       </div>
     </ui-container>
   </header>

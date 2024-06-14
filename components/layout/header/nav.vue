@@ -30,9 +30,14 @@ import { nav } from '../config'
       font-size: 18px;
       line-height: 23px;
       transition: .25s ease;
+
       &:hover {
         color: var(--orange);
         transition: .25s ease;
+      }
+
+      &.router-link-exact-active {
+        color: var(--orange);
       }
     }
   }

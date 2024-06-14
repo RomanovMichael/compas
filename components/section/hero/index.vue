@@ -36,6 +36,7 @@
   &__image {
     position: relative;
     width: 532px;
+    flex-shrink: 0;
 
     picture { 
       display: block;
@@ -50,7 +51,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
       }
     }
   }
