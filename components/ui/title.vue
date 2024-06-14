@@ -38,6 +38,10 @@ const props = defineProps({
 
   &.title-main h1 {
     font-size: 41px;
+
+    @include phones {
+      font-size: 31px;
+    }
   }
 
   &.title-section h2 {
@@ -49,7 +53,7 @@ const props = defineProps({
     color: var(--text-blue);
     font-size: 31px;
 
-    @include phones {
+    @include laptops {
       font-size: 27px;
     }
   }

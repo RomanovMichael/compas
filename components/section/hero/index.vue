@@ -24,6 +24,14 @@
     display: flex;
     flex-wrap: nowrap;
     gap: 40px;
+
+    @include laptops {
+      justify-content: space-between;
+    }
+
+    @include tablets {
+      flex-direction: column-reverse; 
+    }
   }
   
   &__content {
@@ -31,12 +39,33 @@
     flex-direction: column;
     max-width: 563px;
     gap: 25px;
+
+    @include laptops {
+      max-width: 500px;
+    }
+
+    @include tablets {
+      max-width: 100%;
+    }
   }
 
   &__image {
     position: relative;
     width: 532px;
     flex-shrink: 0;
+
+    @include laptops {
+      width: 450px;
+    }
+
+    @include tablets {
+      margin: 0 auto;
+      width: 600px;
+    }
+
+    @include phones {
+      width: 100%;
+    }
 
     picture { 
       display: block;
@@ -53,6 +82,12 @@
         height: 100%;
         object-fit: contain;
       }
+    }
+  }
+
+  h1 {
+    @include tablets {
+      text-align: center;
     }
   }
 }

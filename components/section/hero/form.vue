@@ -29,6 +29,11 @@ const mainStore = useMainStore()
     align-items: center;
     gap: 21px;
     margin-top: 15px;
+
+    @include phones {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
 
   &__group {
@@ -37,9 +42,23 @@ const mainStore = useMainStore()
     gap: 30px;
     margin-bottom: 16px;
 
-    .ui-input:first-child {
-      flex: 1;
+    @include phones {
+      flex-direction: column;
+      gap: 16px;
     }
+
+
+    .ui-input {
+
+      &:first-child {
+        flex: 1;
+      }
+
+      @include phones {
+        width: 100%;
+      }
+    }
+
   }
 
   &__caption {
