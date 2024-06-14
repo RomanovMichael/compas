@@ -11,6 +11,8 @@
 
 <style lang="scss">
 .section-features {
+  margin-top: 98px;
+  
   .ui-container {
     display: flex;
     flex-direction: column;

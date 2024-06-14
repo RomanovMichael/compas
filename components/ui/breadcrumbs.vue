@@ -15,8 +15,11 @@
     <span 
       v-for="crumb in items" 
       :key="crumb"
-      :class="['ui-breadcrumbs__item', { 'ui-breadcrumbs__item--current' : items[items.length - 1] === crumb}]"
-      >{{ crumb }}</span>
+      :class="[
+        'ui-breadcrumbs__item', 
+        { 'ui-breadcrumbs__item--current' : items[items.length - 1] === crumb }
+      ]"
+    >{{ crumb }}</span>
   </div>
 </template>
 

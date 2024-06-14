@@ -12,4 +12,8 @@ const bibliographyList = getDocs.data
   </section>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.section-bibliography {
+  margin-top: 85px;
+}
+</style>

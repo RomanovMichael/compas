@@ -33,6 +33,7 @@ const breadcrumbs = [currentPage.flag, currentPage.title ]
 
 <style lang="scss">
 .page-docs {
+  padding-top: 20px;
 
   &__content {
     margin-top: 40px;
@@ -46,6 +47,10 @@ const breadcrumbs = [currentPage.flag, currentPage.title ]
     p {
       margin-top: 18px;
     }
+  }
+
+  &__title {
+    margin-top: 20px;
   }
 
   .ui-title__text {
