@@ -10,4 +10,5 @@ const mainStore = useMainStore()
   <ui-button color="transparent" label="О сервисе"></ui-button>
   <ui-button label="Регистрация"></ui-button>
   <ui-button @click="mainStore.togglePopup()" playBtn label="О сервисе"></ui-button>
+  <ui-logo/>
 </template>
