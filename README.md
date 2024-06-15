@@ -20,7 +20,7 @@
 * Если поля формы не заполнены, то запрещать отправку данных и менять цвет бордеров у полей на красный
 
 
-Nuxt3 Compostion Api, Vue Transitions, NuxtContent, Pinia, Swiper, Vuelidate, SCSS, SVGloader
+#### Nuxt3 Compostion Api, Vue Transitions, NuxtContent, Pinia, Swiper, Vuelidate, SCSS, SVGloader
 
 
 ## Setup
