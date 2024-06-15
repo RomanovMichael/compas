@@ -1,20 +1,64 @@
 <script setup>
-import { useMainStore } from '@/stores/main'
+import { useFormStore } from '@/stores/form'
+import useVuelidate from '@vuelidate/core';
+import { required } from '@vuelidate/validators'
 
-const mainStore = useMainStore()
+const formStore = useFormStore()
+
+const form = reactive({
+  carId: '',
+  carRegion: '',
+  carReciept: ''
+})
+
+const rules = {
+  carId: { required },
+  carRegion: { required },
+  carReciept: { required }
+}
+
+const v$ = useVuelidate(rules, form)
+
+const submitForm = async () => {
+  const isValidFields = await v$.value.$validate()
+
+  if (!isValidFields) return
+  formStore.postRequest(form)
+}
 </script>
 
 <template>
-  <div class="section-hero-form">
-    <form>
+  <span class="load">
+    {{ formStore.isLoading }}
+  </span>
+  <div :class="[
+    'section-hero-form',
+    {'section-hero-form--is-loading' : formStore.isLoading}]"
+  >
+    <form @submit.prevent="submitForm()">
       <div class="section-hero-form__group">
-        <ui-input v-model:value="mainStore.form.data.id" label="Номер автомобиля" name="carId"/>
-        <ui-input v-model:value="mainStore.form.data.region" label="Регион" name="carRegion"/>
+        <ui-input 
+          v-model:value="form.carId" 
+          label="Номер автомобиля" 
+          name="carId"
+          :isError="v$.carId.$errors.length > 0"
+        />
+        <ui-input
+          v-model:value="form.carRegion"
+          label="Регион" 
+          name="carRegion"
+          :isError="v$.carRegion.$errors.length > 0"
+        />
       </div>
-      <ui-input v-model:value="mainStore.form.data.certificate" label="Свидетельство о регистрации ТС" name="carReciept"/>
+      <ui-input 
+        v-model:value="form.carReciept" 
+        label="Свидетельство о регистрации ТС" 
+        name="carReciept"
+        :isError="v$.carReciept.$errors.length > 0"
+      />
       <div class="section-hero-form__btns">
         <ui-button action="submit" requestBtn label="Проверить штрафы"></ui-button>
-        <ui-button @click="mainStore.togglePopup()" playBtn label="О сервисе"></ui-button>
+        <!-- <ui-button @click="mainStore.togglePopup()" playBtn label="О сервисе"></ui-button> -->
       </div>
       <span class="section-hero-form__caption">Нажимая «Проверить штрафы» вы соглашаетесь с политикой обработки персональных данных и принимаете оферту</span>
     </form>
@@ -23,6 +67,12 @@ const mainStore = useMainStore()
 
 <style lang="scss">
 .section-hero-form {
+  transition: .25s ease;
+
+  &--is-loading {
+    opacity: 0.4;
+    transition: .25s ease;
+  }
 
   &__btns {
     display: flex;

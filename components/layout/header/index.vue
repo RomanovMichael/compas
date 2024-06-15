@@ -73,8 +73,12 @@
     }
 
     &__btn {
-      @include tablets {
-        display: none;
+      
+      &.ui-button {
+
+        @include tablets {
+          display: none;
+        }
       }
     }
   }

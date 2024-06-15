@@ -22,7 +22,7 @@ const props = defineProps({
     required: true
   },
   isError: {
-    type: Function,
+    type: Boolean,
     required: false
   }
 })
