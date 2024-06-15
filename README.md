@@ -2,6 +2,8 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+![Иллюстрация к проекту](https://github.com/RomanovMichael/compas/raw/master/public/preview.png)
+
 ## Setup
 
 Make sure to install the dependencies:
