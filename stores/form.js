@@ -1,9 +1,9 @@
 import { makeRequest } from '@/api'
-import { useMainStore } from './main'
+import { usePopupStore } from './popup'
 
 export const useFormStore = defineStore('form', () => {
   const isLoading = ref(false)
-  const mainStore = useMainStore()
+  const popupStore = usePopupStore()
 
   const postRequest = async (payload) => {
     isLoading.value = true
@@ -15,10 +15,11 @@ export const useFormStore = defineStore('form', () => {
 
     try {
       const response = await makeRequest(payload) 
-      mainStore.togglePopup()
+      popupStore.updatePopup('success')
       return response
+
     } catch(error) {
-      console.log(error)
+      console.error(error)
     } finally {
       isLoading.value = false
     }

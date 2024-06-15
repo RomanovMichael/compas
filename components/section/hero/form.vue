@@ -1,9 +1,11 @@
 <script setup>
 import { useFormStore } from '@/stores/form'
-import useVuelidate from '@vuelidate/core';
+import { usePopupStore } from '@/stores/popup'
+import useVuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 
 const formStore = useFormStore()
+const popupStore = usePopupStore()
 
 const form = reactive({
   carId: '',
@@ -19,23 +21,21 @@ const rules = {
 
 const v$ = useVuelidate(rules, form)
 
-const submitForm = async () => {
+const submitForm = async (e) => {
   const isValidFields = await v$.value.$validate()
 
   if (!isValidFields) return
-  formStore.postRequest(form)
+  await formStore.postRequest(form)
+  await e.target.reset()
 }
 </script>
 
 <template>
-  <span class="load">
-    {{ formStore.isLoading }}
-  </span>
   <div :class="[
     'section-hero-form',
     {'section-hero-form--is-loading' : formStore.isLoading}]"
   >
-    <form @submit.prevent="submitForm()">
+    <form @submit.prevent="submitForm($event)">
       <div class="section-hero-form__group">
         <ui-input 
           v-model:value="form.carId" 
@@ -57,10 +57,20 @@ const submitForm = async () => {
         :isError="v$.carReciept.$errors.length > 0"
       />
       <div class="section-hero-form__btns">
-        <ui-button action="submit" requestBtn label="Проверить штрафы"></ui-button>
-        <!-- <ui-button @click="mainStore.togglePopup()" playBtn label="О сервисе"></ui-button> -->
+        <ui-button
+          action="submit" 
+          requestBtn 
+          label="Проверить штрафы"
+        ></ui-button>
+        <ui-button 
+          @click="popupStore.updatePopup('video')"
+          playBtn
+          label="О сервисе"
+        ></ui-button>
       </div>
-      <span class="section-hero-form__caption">Нажимая «Проверить штрафы» вы соглашаетесь с политикой обработки персональных данных и принимаете оферту</span>
+      <span class="section-hero-form__caption">
+        Нажимая «Проверить штрафы» вы соглашаетесь с политикой обработки персональных данных и принимаете оферту
+      </span>
     </form>
   </div>
 </template>
@@ -97,7 +107,6 @@ const submitForm = async () => {
       gap: 16px;
     }
 
-
     .ui-input {
 
       &:first-child {
@@ -119,5 +128,4 @@ const submitForm = async () => {
     margin-top: 16px;
   }
 }
-
 </style>

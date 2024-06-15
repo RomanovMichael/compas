@@ -1,18 +1,18 @@
 <script setup>
-import { useMainStore } from '@/stores/main'
+  import { usePopupStore } from '@/stores/popup'
 
-const mainStore = useMainStore()
+  const popupStore = usePopupStore()
 </script>
 
 <template>
   <div class="ui-popup">
     <div class="ui-popup__wrap">
-      <div class="ui-popup__content">
-        <div class="ui-popup__close" @click="mainStore.togglePopup()"></div>
-        <iframe width="960" height="532" src="https://www.youtube.com/embed/bolW0Fhr390?si=QFE-h_tLC9RYA8E_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="ui-popup__container">
+        <div class="ui-popup__close" @click="popupStore.updatePopup()"></div>
+        <slot/>
       </div>
     </div>
-    <div @click="mainStore.togglePopup()" class="ui-popup__shade"></div>
+    <div @click="popupStore.updatePopup()" class="ui-popup__shade"></div>
   </div>
 </template>
 
@@ -33,12 +33,12 @@ const mainStore = useMainStore()
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow-y: scroll;
   }
 
-  &__content {
+  &__container {
     position: relative;
-    max-width: 960px;
-    max-height: 532px;
     z-index: 4;
   }
 
@@ -46,8 +46,8 @@ const mainStore = useMainStore()
     position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 101%;
+    height: 101%;
     z-index: 3;
     background: rgba(0, 0, 0, 0.79);
     animation-duration: .16s;

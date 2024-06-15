@@ -11,7 +11,11 @@
   <div class="section-bibliography-card">
     <ui-title type="subtitle-main">{{ item.title }}</ui-title>
     <ui-text class="section-bibliography-card__desc"> {{ item.description }}</ui-text>
-    <ui-button @click="$router.push(`/docs/${item.id}`)" label="Перейти" class="section-bibliography-card__btn"></ui-button>
+    <ui-button 
+      @click="$router.push(`/docs/${item.id}`)" 
+      label="Перейти" 
+      class="section-bibliography-card__btn"
+    />
   </div>
 </template>
 
