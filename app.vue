@@ -6,7 +6,8 @@ useHead({
   title: appTitle,
   meta: [
     { name: 'description', content: appContent},
-    { property: 'vk:image', content: '/preview.png' }
+    { property: 'vk:image', content: '/preview.png' },
+    { property: 'og:image', content: '/preview.png' }
   ],
 })
 
