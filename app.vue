@@ -6,7 +6,7 @@ useHead({
   title: appTitle,
   meta: [
     { name: 'description', content: appContent},
-    { property: 'vk:image', content: '@/assets/images/main-image.png' }
+    { property: 'vk:image', content: '@/assets/images/hero/main-image.png' }
   ],
 })
 
@@ -15,13 +15,13 @@ useSeoMeta({
   ogTitle: appTitle,
   description: appContent,
   ogDescription: appContent,
-  ogImage: '@/assets/images/main-image.png',
-  ogImageSecureUrl: '@/assets/images/main-image.png',
+  ogImage: '@/assets/images/hero/main-image.png',
+  ogImageSecureUrl: '@/assets/images/hero/main-image.png',
   ogImageHeight: 630,
   ogImageWidth: 1200,
   twitterTitle: appTitle,
   twitterDescription: appContent,
-  twitterImage: '@/assets/images/main-image.png',
+  twitterImage: '@/assets/images/hero/main-image.png',
   twitterCard: 'summary_large_image'
 })
 </script>
