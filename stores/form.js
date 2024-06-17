@@ -14,7 +14,7 @@ export const useFormStore = defineStore('form', () => {
     }
 
     try {
-      const response = await makeRequest(payload) 
+      const response = await makeRequest(formData) 
       popupStore.updatePopup('success')
       return response
 

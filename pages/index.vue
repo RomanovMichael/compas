@@ -1,8 +1,4 @@
-<script setup>
-import { useMainStore } from '@/stores/main'
-
-const mainStore = useMainStore()
-</script>
+<script setup></script>
 
 <template>
   <div class="page page-main">
